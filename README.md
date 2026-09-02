@@ -4,7 +4,12 @@
 패널 컨셉으로 만들었고, 메트로놈과 타격음은 별도 음원 파일 없이 Web Audio API로
 직접 합성합니다.
 
-## 바로 실행하기
+## 🎮 바로 플레이
+
+**[borigunbbang.github.io/rhythm_game](https://borigunbbang.github.io/rhythm_game/)**
+— 클릭하면 설치 없이 브라우저에서 바로 시작합니다.
+
+## 로컬에서 실행하기
 
 설치나 빌드 과정이 없습니다. `index.html`을 브라우저로 열면 바로 플레이할 수
 있습니다.
