@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phosphor Pulse</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="console" role="application" aria-label="Phosphor Pulse 리듬게임">
+  <span class="screw tl"></span><span class="screw tr"></span>
+  <span class="screw bl"></span><span class="screw br"></span>
+  <p class="plate">MODEL PP-4 · SIGNAL PROCESSOR</p>
+
+  <div class="hud">
+    <div class="hud-block score">
+      <span class="hud-label">Score</span>
+      <span class="hud-value" id="scoreVal">000000</span>
+    </div>
+    <div class="hud-block combo">
+      <span class="hud-label">Combo</span>
+      <span class="hud-value" id="comboVal">0<span class="hud-sub" id="multVal">×1.0</span></span>
+    </div>
+    <div class="hud-block progress">
+      <span class="hud-label">Track position</span>
+      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    </div>
+  </div>
+
+  <div class="stage" id="stage">
+    <div class="lane" data-lane="0"><div class="lane-press" id="press0"></div></div>
+    <div class="lane" data-lane="1"><div class="lane-press" id="press1"></div></div>
+    <div class="lane" data-lane="2"><div class="lane-press" id="press2"></div></div>
+    <div class="lane" data-lane="3"><div class="lane-press" id="press3"></div></div>
+    <div class="judgment-line"></div>
+    <div class="judgment-popup" id="judgmentPopup"></div>
+    <div class="prepare" id="prepare">준비하세요</div>
+
+    <div class="overlay" id="startOverlay">
+      <p class="subtitle">Phosphor Pulse</p>
+      <h1 class="title">노트가 <span class="accent">앰버 라인</span>에<br>닿는 순간을 노려라</h1>
+      <p class="instructions">
+        4개 레인에 맞춰 <b>Q · W · E · R</b> 키를 사용합니다. 노트가 <b>판정선</b>에 겹치는 순간
+        해당 키를 누르면 정확도에 따라 <b class="k">PERFECT</b> / <b class="k">GOOD</b>이 되고,
+        놓치면 <b class="k">MISS</b>로 콤보가 끊깁니다. 노트 없이 눌러도 감점은 없습니다.
+        약 1분 트랙이 끝나면 결과가 집계됩니다.
+      </p>
+      <button class="btn" id="startBtn">세션 시작</button>
+    </div>
+
+    <div class="overlay hidden" id="resultOverlay">
+      <p class="subtitle">Session Result</p>
+      <div class="stamp" id="rankStamp">S</div>
+      <div class="result-grid" id="resultGrid">
+        <span>Score</span><b>0</b>
+        <span>Max Combo</span><b>0</b>
+        <span>Accuracy</span><b>0%</b>
+        <span>Perfect / Good / Miss</span><b>0 / 0 / 0</b>
+      </div>
+      <div style="display:flex; gap:14px; align-items:center; margin-top:6px;">
+        <button class="btn" id="retryBtn">다시 도전</button>
+        <button class="link-btn" id="titleBtn">처음 화면으로</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="keycaps">
+    <div class="keycap" data-lane="0">Q</div>
+    <div class="keycap" data-lane="1">W</div>
+    <div class="keycap" data-lane="2">E</div>
+    <div class="keycap" data-lane="3">R</div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
